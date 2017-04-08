@@ -71,7 +71,7 @@ h1{
 	overflow:hidden;
 }
 
-.glyphicon
+#topStrip .glyphicon
 {
 color:white;
 padding-right:10px;
@@ -110,6 +110,7 @@ position: absolute;
 left: 0;
 top: 10px;
 color:black;
+margin-top: 5px;
 }
 
 #phoneNumber > *{
@@ -118,6 +119,7 @@ float:left;
 
 #phoneNumber > .glyphicon{
 padding-left: 10px;
+padding-right: 10px;
 }
 
 .navbar-header
@@ -140,12 +142,7 @@ padding-left: 10px;
 
 }
 
-.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus
-{
-color:#c84111;
-
-}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover {
 	color:#c84111;
 	background-color:rgba(0, 0, 0, 0);
 }
@@ -157,7 +154,7 @@ z-index:100;
 }
 
 .blackGlassButton{
-	display:block;
+	
 	margin:15px;
 	position:relative;
 	border-radius:50%;
@@ -187,6 +184,10 @@ z-index:100;
 	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0));
 	border-radius:50%;
 	
+}
+
+#contactDiv > .blackGlassButton{
+	display: block;
 }
 
 main-slider{
@@ -384,6 +385,23 @@ transition:height linear 0.5s;;
 margin-left:25%;
 }
 
+#productsPage > #cartButton{
+position: absolute;
+right: 10px;
+z-index: 500;
+opacity: 0;
+transition:opacity linear 0.5s;
+	height: 40px;
+	width: 40px;
+	
+
+}
+
+#productsPage > #cartButton .glyphicon{
+	top: 5px;
+	font-size: 20px;
+}
+
 #productPage > h1{
 color:#000;
 text-align: center;
@@ -547,6 +565,13 @@ padding-left: 10px;
 	padding-left:1%;
 }
 
+#cartPage > .crossButton{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 20px;
+}
+
 #cartPage > h1{
 	color: white;
 	text-transform: uppercase;
@@ -568,11 +593,11 @@ margin:0;
 	width:85%;
 }
 
-#cartPage > .cartItems .crossButton{
+.crossButton{
 cursor: pointer;
 }
 
-#cartPage > .cartItems  .crossButton:hover{
+.crossButton:hover{
 	color: #B5D3DE;
 }
  
@@ -798,16 +823,6 @@ my-slider .instructions > li{
 display:none !important;
 }
 
-#contactDiv{
-left:0;
-display:flex;
-}
-
-#contactDiv > .blackGlassButton{
-margin:auto;
-height:40px;
-width:40px;
-}
 
 #contactDiv >  .blackGlassButton > i{
 	font-size: 20px;
@@ -826,6 +841,16 @@ width:40px;
 /*----- bootsraps mobile phone size-------*/
 
 @media (max-width: 767px){
+	#contactDiv{
+left:0;
+display:flex;
+}
+
+#contactDiv > .blackGlassButton{
+margin:auto;
+height:40px;
+width:40px;
+}
 
 #contactDiv >  .blackGlassButton{
 display: inline-block;
@@ -864,9 +889,20 @@ width:40px;
 	margin-left: 0;
 }
 
+#productsPage > #cartButton{
+	opacity: 1;
+}
+
 #cartPage{
 	display: none;
+	top:0;
+	right:0;
+	padding-left: 5%;
+	width: 90%;
+	z-index:1000;
 }
+
+
 
 my-slider >div >.col-md-6 > .container>.descriptionSlider > h1{
 	font-size: 25px;

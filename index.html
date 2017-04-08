@@ -47,10 +47,9 @@
       <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Recipes</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="" ng-click="goTo('aboutUsPage')">About</a></li>
+        <li><a href="" ng-click="goTo('productsPage')">Products</a></li>
+        <li><a href="" ng-click="goTo('recipesPage')">Recipes</a></li>
       </ul>
       </div>
       </nav>
@@ -69,11 +68,11 @@
   
   </div>
 
-  <div class="pages" style="background-color:white" animate-scroll scroll-distance="{{scrollTopDistance}}" show-var="showImage">
+  <div id="aboutUsPage" class="pages" style="background-color:white">
   <div class="backgroundImage"></div>
-    <img id="backgroundImage2" ng-src="css/images/aboutUsBg.png"  ng-hide="showImage"/>
-    <div id="borderDiv" ng-hide="showImage"></div>
-    <div id="contentDiv" ng-hide="showImage">
+    <img id="backgroundImage2" ng-src="css/images/aboutUsBg.png" />
+    <div id="borderDiv"></div>
+    <div id="contentDiv">
       <h1>At Vita Fresh, our products are : </h1>
       <ul>
         <li><span>real fresh</span>
@@ -85,13 +84,14 @@
         <p>Preservatives are harmful for our health on long term. To preserve our good health, we have crafted our products preservative free.</p></li>
       </ul>
     </div>
-    <div id="aboutUs" ng-hide="showImage">
+    <div id="aboutUs">
     <h1>Delivering Exotic Range of Sauces</h1>
     <h4>Chemical free,preservatives free &amp freshly made PREMIUM quality products.</h4>
     </div>
     
   </div>
-<div class="pages">
+<div id="productsPage" class="pages">
+<button id="cartButton" class="blackGlassButton" change-display to-change="cartPage"><i><span class="glyphicon glyphicon-shopping-cart"></span></i></button>
 <div class="backgroundImage"></div>
 <my-modal show-variable="showModal" height="50%" width="50%">
 <form ng-submit="submitOrder()">
@@ -132,6 +132,7 @@
   </form>
 </my-modal>
 <div id="cartPage">
+  <span class="crossButton visible-xs" change-display to-change="cartPage">&#10006</span>
   <h1><span class="glyphicon glyphicon-shopping-cart"></span>cart</h1>
   <table ng-if="!emptyCart" class="table cartItems">
     <tbody>
@@ -148,7 +149,7 @@
 
 </div>
   <div id="productPage" class="col-xs-12 col-sm-7">
-    <h1>Products</h1>
+    <h1>Products </h1>
     <cart-box products="products"></cart-box>
   </div>
   </div>

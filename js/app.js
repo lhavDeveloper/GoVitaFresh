@@ -1,6 +1,6 @@
 var app = angular.module('goVita', ['ngAnimate','ui.bootstrap']);
 
-app.controller('mainController', function($scope, $rootScope, $window) {
+app.controller('mainController', function($scope, $rootScope, $window,$location, $anchorScroll) {
 
 $scope.scrollTopDistance=0;
 $scope.showImage=true;
@@ -113,7 +113,9 @@ $scope.emptyCart=true;
 $scope.cart=[];
 $scope.total=0;
 
-$scope.init=function(){
+$scope.goTo= function(id){
+ $location.hash(id);
+ $anchorScroll();
 }
 
 $scope.selectProduct = function(i)
@@ -258,9 +260,27 @@ return{
 };
 }]);
 
-app.directive('chinkicha',['$window',function($window){
+app.directive('changeDisplay',function(){
   
     return{ 
+  restrict:'A',
+  link:function(scope,element,attrs){
+
+    element.on('click',function(){
+     var id=attrs.toChange;
+     var displayValue=angular.element(document.getElementById(id)).css('display');
+     if(displayValue=='none' || displayValue=="")
+     angular.element(document.getElementById(id)).css('display','initial');
+   else
+    angular.element(document.getElementById(id)).removeAttr('style');
+    })
+  }
+   
+ };
+});
+app.directive('chinkicha',['$window',function($window){
+  
+    return{
   restrict:'E',
   scope:{
     val1:'@',
@@ -410,7 +430,6 @@ app.directive('mySlider',['$window','$timeout',function(window,$timeout){
 
       verticalElement.bind('mousewheel DOMMouseScroll', function(e){
         $timeout( function(){
-          console.log("scroll");
         (document.getElementsByClassName("horizontalScroll")[0]).scrollLeft=((document.getElementsByClassName("verticalScroll")[0]).scrollTop*containerWidth)/totalVerticalHeight}
         , 100 );
             
