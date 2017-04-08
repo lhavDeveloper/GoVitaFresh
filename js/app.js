@@ -221,7 +221,7 @@ return{
       scope.quotes[0].class=true;
     }
     }
-    , 3000);
+    , 30000);
    element.on('$destroy', function() {
             $interval.cancel(scope.timer);
 

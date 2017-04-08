@@ -841,7 +841,11 @@ display:none !important;
 /*----- bootsraps mobile phone size-------*/
 
 @media (max-width: 767px){
-	#contactDiv{
+
+	h1{
+		font-size: 25px;
+	}
+#contactDiv{
 left:0;
 display:flex;
 }
@@ -887,6 +891,11 @@ width:40px;
 
 #productPage{
 	margin-left: 0;
+	height: 100%;
+}
+
+#productPage #pdtContainer{
+	height: 90%;
 }
 
 #productsPage > #cartButton{
@@ -973,6 +982,7 @@ width:14%;
 
 #welcomeDiv  h2{
  font-size:24px;
+ margin-top: 15vh;
 }
 
 my-slider >div >.col-md-6 > .container>.descriptionSlider > img{
