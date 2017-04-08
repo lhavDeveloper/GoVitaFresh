@@ -18,16 +18,16 @@ quote2:'Consciousness'}];
 
 $scope.chefRecommendations = [
 {
-imageUrl:'/css/images/pizza.jpg',
+imageUrl:'css/images/pizza.jpg',
 title:"Hummus Flatbread Pizza",
 description:"Rice noodles or rice vermicelli with chicken, prawn or fish, served in spicy soup based on rich and spicy curry coconut milk, or based on sour asam",
 color:'#d66a00'
 },
-{imageUrl:'/css/images/croquettes.jpg',
+{imageUrl:'css/images/croquettes.jpg',
 title:"Chickpea Croquettes",
 description:"Aromatic rice infused with coconut milk and pandan leaves, eaten with deep-fried fish or chicken wings, 'otah' (grilled fish paste), fried 'ikan bilis' (local anchovies) and peanuts, eggs, cucumber slices, and 'sambal' (spicy chilli paste).",
 color:'#006400'},
-{imageUrl:'/css/images/sesameNoodles.jpg',
+{imageUrl:'css/images/sesameNoodles.jpg',
 title:'Hummus-Sesame Noodles',
 description:"Fried pre-cooked rice, a meal including stir fried rice in small amount of cooking oil, spiced with kecap manis (sweet soy sauce), shallot, garlic, ground shrimp paste, tamarind and chilli and accompanied by other ingredients, egg, chicken and prawns",
 color:'#B20000'}];
